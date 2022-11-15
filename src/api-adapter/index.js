@@ -40,7 +40,7 @@ export async function loginUser(username, password) {
 }
 
 export async function getMe(token) {
-  console.log(token);
+ 
   const options = {
     headers: {
       "Content-Type": "application/json",
@@ -134,7 +134,7 @@ export async function getAllRoutines() {
   };
   const response = await fetch(`${BASE_URL}/api/routines`, options);
   const result = await response.json();
-  console.log(result);
+ 
   return result;
 }
 

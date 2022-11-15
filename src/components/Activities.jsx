@@ -13,17 +13,19 @@ const [activities, setActivities] = useState([])
         fetchActivities();
       }, []);
 
-        console.log(activities)
+       
         return (
             <div className="activitiesBox">
             <h3 className="activitiesTitle"> List of Activities </h3>
             {activities ? (
               activities.map((activities) => {
-               
+              
                   return (
                     <div key={`activities${activities.id}`}>
                       <div className="activitiesContent">
-                        {activities.name} 
+                      <h4> Activity name: {activities.name} </h4>
+                     Description: {activities.description}
+                   
                       </div>
                     </div>
                   ) ;

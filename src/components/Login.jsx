@@ -6,7 +6,8 @@ const Login = (props) => {
         event.preventDefault()
         const username = event.target[0].value
         const password = event.target[1].value
-        const token = await loginUser(username, password)
+        const {token} = await loginUser(username, password)
+        console.log(token)
         localStorage.setItem("token", token)
     }
 

@@ -34,6 +34,7 @@ const Main = () => {
           <Route path="/" element={<Routines />} />
           <Route path="/activities" element={<Activities />} />
           <Route path="/myroutines" element={<MyRoutines />} /> 
+          <Route path="/routines" element={<Routines />} /> 
         </Routes>
         <div id="container">
           {/* <Activities />

@@ -28,6 +28,7 @@ body {
   display: flex;
   align-items: center;
   z-index: 10;
+
 }
 
 #navbar div {
@@ -64,4 +65,8 @@ max-width: 400px;
 .activitiesContent {
   border: 2px solid black;
   max-width: 300px;
+}
+#navLinkButtons {
+  min-height: 50%;
+  min-width: 50%;
 }

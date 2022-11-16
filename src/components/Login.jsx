@@ -9,6 +9,18 @@ const Login = (props) => {
         const {token} = await loginUser(username, password)
         console.log(token)
         localStorage.setItem("token", token)
+        if (token) {
+            localStorage.setItem("token", token);
+            localStorage.setItem("username", username);
+            event.target[0].value = ''
+            event.target[1].value = ''
+            } else {
+              event.target[0].value = ''
+              event.target[1].value = ''
+              return(
+                alert("Username not found or username and password do not match. Please check your credentials or register a new account.")
+            )
+            }
     }
 
     return (

@@ -1,9 +1,17 @@
 import React from "react";
+import { Register, Login } from "./";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
+async function logout() {
+  localStorage.removeItem("token");
+    localStorage.removeItem("username");
+}
+
   return (
     <div id="navbar">
-      <h2> I am navbar</h2>
+        <Register />
+        <Login />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from "react";
-import { NavBar, Register, Login, Profile, Routines, Activities } from "./";
+import { NavBar, Register, Login, Profile, Routines, Activities, MyRoutines } from "./";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {getMe} from '../api-adapter'
 
@@ -28,15 +28,17 @@ const Main = () => {
     <Router>
       <div id="main">
         <div id="navbar">
-        <Register /> <Login />
+        <NavBar />
         </div>
+        <Routes>
+          <Route path="/" element={<Routines />} />
+          <Route path="/activities" element={<Activities />} />
+          <Route path="/myroutines" element={<MyRoutines />} /> 
+        </Routes>
         <div id="container">
-          {<Profile loggedInUser={loggedInUser}/> }
-          <div id="workoutsBox">
-          {<Activities />}
-          {<Routines /> }
-          </div>
-        </div>
+          {/* <Activities />
+          <Routines />  */}
+        </div>  
       </div>
     </Router>
   );

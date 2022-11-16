@@ -35,7 +35,6 @@ export async function loginUser(username, password) {
   };
   const response = await fetch(`${BASE_URL}/api/users/login`, loginOptions);
   const result = await response.json();
-  console.log(result);
   return result;
 }
 
@@ -76,7 +75,6 @@ export async function getAllActivities() {
   };
   const response = await fetch(`${BASE_URL}/api/activities`, options);
   const result = await response.json();
-  console.log(result);
   return result;
 }
 

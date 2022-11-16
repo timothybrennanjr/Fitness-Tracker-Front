@@ -21,14 +21,18 @@ const Main = () => {
     }
   }, []);
 
-
-
+  useEffect (() => {
+    const userLogIn = localStorage.getItem("token")
+    if (userLogIn) {
+      setLoggedIn(userLogIn)
+    }
+  }, [loggedIn]);
 
   return (
     <Router>
       <div id="main">
         <div id="navbar">
-        <NavBar />
+        <NavBar setLoggedIn={setLoggedIn}/>
         </div>
         <Routes>
           <Route path="/" element={<Routines />} />

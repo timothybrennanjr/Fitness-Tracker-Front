@@ -44,7 +44,7 @@ export async function getMe(token) {
   const options = {
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+      "Authorization": `Bearer ${token}`,
     },
   };
   const response = await fetch(`${BASE_URL}/api/users/me`, options);
@@ -141,9 +141,13 @@ export async function getAllRoutines() {
 export async function createRoutine(name, goal, isPublic) {
   const options = {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${localStorage.getItem('token')}`
+    },
     body: JSON.stringify({
       name,
-      description,
+      goal,
       isPublic,
     }),
   };

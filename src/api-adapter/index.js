@@ -83,6 +83,10 @@ export async function getAllActivities() {
 export async function createActivity(name, description) {
   const options = {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${localStorage.getItem('token')}`
+    },
     body: JSON.stringify({
       name,
       description,
@@ -137,6 +141,20 @@ export async function getAllRoutines() {
  
   return result;
 }
+
+export async function getAllPrivateRoutines(username) {
+  const options = {
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${localStorage.getItem('token')}`
+    },
+  };
+  const response = await fetch(`${BASE_URL}/api/users/${username}/routines`, options);
+  const result = await response.json();
+ 
+  return result;
+}
+
 
 export async function createRoutine(name, goal, isPublic) {
   const options = {

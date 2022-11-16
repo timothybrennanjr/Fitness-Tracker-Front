@@ -32,7 +32,7 @@ const Main = () => {
         </div>
         <Routes>
           <Route path="/" element={<Routines />} />
-          <Route path="/activities" element={<Activities />} />
+          <Route path="/activities" element={<Activities loggedInUser={loggedInUser}/>} />
           <Route path="/myroutines" element={<MyRoutines loggedInUser={loggedInUser}/>} /> 
           <Route path="/routines" element={<Routines />} /> 
         </Routes>

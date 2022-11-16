@@ -1,29 +1,34 @@
-import {React, useState, useEffect} from 'react'
-import { createRoutine, getAllRoutines } from '../api-adapter'
+import {React, useState, useEffect, useReducer} from 'react'
+import { createRoutine, getAllRoutines, getAllPrivateRoutines } from '../api-adapter'
 const MyRoutines = (props) => {
 const [name, setName] =useState("")
 const [goal, setGoal] =useState("")
 const [isPublic, setIsPublic] = useState(false)
 const [routines, setRoutines] = useState([])
-
+const [reducerValue, forceUpdate] = useReducer(x => x + 1, 0);
 const username = props.loggedInUser.username
 
  useEffect(() => {
      async function fetchRoutines() {
-       const allRoutines = await getAllRoutines();
+      console.log("I am fetching routines")
+       const allRoutines = await getAllPrivateRoutines(username);
        setRoutines(allRoutines);
      }
-     fetchRoutines();
-   }, []);
+     
+     username && fetchRoutines();
+   }, [username, reducerValue]);
 
 
 
 
 
-const handleSubmit = (e) => {
+const  handleSubmit = async (e) => {
   e.preventDefault();
-  createRoutine(name, goal, isPublic)
-  
+  const createdRoutine = await createRoutine(name, goal, isPublic);
+  forceUpdate()
+  if (createdRoutine.error.includes("duplicate key")) {
+    return (alert("A routine with that name already exists."))
+  }
 }
 
 const handleChange = (e) => {
@@ -44,7 +49,7 @@ const handleChange = (e) => {
 
 
     <div className="submitPost">
-    <h2> Hello, {username}! Add a New Post:</h2>
+    <h2> Hello, {username}! Add a New Routine:</h2>
     <form onSubmit={handleSubmit}>
       <label className="labels">Routine Name </label>
       <input

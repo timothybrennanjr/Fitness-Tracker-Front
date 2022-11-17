@@ -31,13 +31,6 @@ const Main = () => {
     }
   }, []);
 
-  // useEffect (() => {
-  //   const userLogIn = localStorage.getItem("token")
-  //   if (userLogIn) {
-  //     setLoggedIn(userLogIn)
-  //   }
-  // }, [loggedIn]);
-
   useEffect(() => {
     async function fetchRoutines() {
       const allRoutines = await getAllRoutines();

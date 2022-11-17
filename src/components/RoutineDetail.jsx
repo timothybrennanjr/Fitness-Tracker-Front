@@ -1,20 +1,11 @@
 import React, { useState,useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { deleteRoutine } from "../api-adapter";
+import {EditRoutine} from './'
 const RoutineDetail = (props) => {
-    // const [singleFilteredRoutine, setSingleFilteredRoutine] = useState({})  
-  
-    // // coming from the routineId route
-    // const {routineId} = useParams()
-    //   if(routineId) {
-    //       const filteredRoutine = props.filterRoutines(routineId);
-    //   setSingleFilteredRoutine(filteredRoutine)
-   
-    //   }
-      
-    //   console.log(props)
     
     const [singleFilteredRoutine, setSingleFilteredRoutine] = useState({})  
+    const [editActive, setEditActive] = useState(false)
     const navigate = useNavigate();
 
 
@@ -46,9 +37,10 @@ console.log(singleFilteredRoutine)
           <div> Name: {singleFilteredRoutine[0].name}</div>
           <div>{singleFilteredRoutine[0].goal}</div>
           <button onClick={handleDelete} >Delete Routine</button>
-        
+          {editActive ? <EditRoutine editActive={editActive} setEditActive={setEditActive}/> : <button onClick={() => {
+            setEditActive(true)
+          }}> Edit Routine </button> }
           </> : null
-          
         }
     </div>
       )

@@ -118,26 +118,26 @@ const NavBar = (props) => {
             </h1>
           </div>
           <NavLink to="/activities">
-            <button>activities</button>
+            <button id="activityButton">activities</button>
           </NavLink>
           <NavLink to="/routines">
-            <button>Routines</button>
+            <button id="routineButton">Routines</button>
           </NavLink>
         </>
       ) : (
         <>
           <div id="navLinkButtons">
             <NavLink to="/activities">
-              <button>activities</button>
+              <button id="activityButton">activities</button>
             </NavLink>
             <NavLink to="/myroutines">
-              <button>My Routines</button>
+              <button id="myRoutineButton">My Routines</button>
             </NavLink>
             <NavLink to="/routines">
-              <button>Routines</button>
+              <button id="routineButton">Routines</button>
             </NavLink>
             <NavLink to="/">
-              <button>Home</button>
+              <button id="homeButton">Home</button>
             </NavLink>
             <button id="logoutButton" onClick={logout}>
               logout

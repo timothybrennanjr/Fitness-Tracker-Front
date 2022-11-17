@@ -82,3 +82,18 @@ max-width: 400px;
   text-decoration: none;
   color: white;
 }
+#activityButton {
+background-color: yellow;
+}
+#routineButton {
+  background-color: yellow;
+}
+#homeButton {
+  background-color: yellow;
+}
+#myRoutineButton {
+  background-color: yellow;
+}
+#logoutButton {
+  background-color: yellow;
+}

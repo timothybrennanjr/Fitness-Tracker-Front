@@ -85,12 +85,17 @@ const MyRoutines = (props) => {
             
               return (
                 <div key={`routine${routine.id}`}>
+                 
+            
+                
+
                   <div className="routineContent">
-                    <h3>Routine Name: {routine.name}</h3>
-                    <br></br>
-                    Goal: {routine.goal}
-                    <br></br>
-                    Creator: {routine.creatorName}
+                  <SingleRoutine 
+                  key={`routine${routine.id}`}
+                  routine={routine}
+                  filterRoutines ={props.filterRoutines}
+                  />
+                   
                   </div>
                   <h4>Routine activities</h4>
 
@@ -114,19 +119,14 @@ const MyRoutines = (props) => {
                     ) : (
                       <h2>No activities</h2>
                     )}{" "}
-                    ;
+                    
                   </div>
 
 
 
-                  <SingleRoutine 
-                  key={`routine${routine.id}`}
-                  routine={routine}
-                  filterRoutines ={props.filterRoutines}
-                 
-            
+                  
                 
-                  />
+                  
                 </div>
               );
           })

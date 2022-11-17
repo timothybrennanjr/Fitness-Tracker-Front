@@ -39,7 +39,7 @@ const RoutineDetail = (props) => {
 
 console.log(singleFilteredRoutine)
   return (
-  <div>
+  <div className= "SingleRoutine">
       {
           singleFilteredRoutine && singleFilteredRoutine.length ?     <>
           <div>RoutineDetail</div>

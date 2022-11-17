@@ -9,7 +9,10 @@ const SingleRoutine = (props) => {
 
 
   return (
-    <div>{routine.name}
+    <div>
+        <h2>Routine Name: {routine.name}</h2>
+        <div>Routine Goal: {routine.goal}</div>
+        
    
    <Link to={`/routines/${routine.id}`}><button>Routine Details</button></Link>
     </div>

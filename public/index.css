@@ -1,5 +1,5 @@
 body {
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: "Raleway", Arial, sans-serif;
   height: 100vh;
   width: 100vw;
   margin: 0;
@@ -19,7 +19,7 @@ body {
 }
 
 #navbar {
-  font-family: 'Poller One', Arial, sans-serif;
+  font-family: "Poller One", Arial, sans-serif;
   flex-grow: 1;
   max-height: 10%;
   min-height: 100px;
@@ -28,12 +28,13 @@ body {
   display: flex;
   align-items: center;
   z-index: 10;
-
+  justify-content: space-between;
 }
 
 #navbar div {
   padding: 5px;
   z-index: 10;
+  padding-right: 25px;
 }
 
 #container {
@@ -44,22 +45,39 @@ body {
   justify-content: center;
 }
 
-#routineBox {
-padding-top: 90px;
+.routinesBox {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: beige;
 }
 #workoutsBox {
   display: flex;
-  flex-direction: row;
 }
 
-.routineContent{
+.routineContent {
   border: 2px solid black;
-  max-width: 400px
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  background-image: linear-gradient(yellow, rgb(187, 109, 105));
+}
+ h4 {
+  text-align: center;
 }
 
-.activityContent{
+
+.activityContent {
   border: 2px solid black;
-max-width: 400px;
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(rgb(187, 109, 105), rgb(189, 130, 127), rgb(187, 109, 105));
+
 }
 
 .activitiesContent {
@@ -69,6 +87,9 @@ max-width: 400px;
 #navLinkButtons {
   min-height: 50%;
   min-width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 .logo {
   display: flex;
@@ -83,7 +104,7 @@ max-width: 400px;
   color: white;
 }
 #activityButton {
-background-color: yellow;
+  background-color: yellow;
 }
 #routineButton {
   background-color: yellow;

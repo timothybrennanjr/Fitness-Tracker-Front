@@ -40,14 +40,7 @@ const handleChange = (e) => {
   setIsPublic((current) => !current);
 };
 
-
     return (
-
-
-
-
-
-
     <div className="submitPost">
     <h2> Hello, {username}! Add a New Routine:</h2>
     <form onSubmit={handleSubmit}>
@@ -122,7 +115,6 @@ const handleChange = (e) => {
 </div>
 </div>
 );
-  
 }
 
 export default MyRoutines

@@ -35,6 +35,7 @@ export async function loginUser(username, password) {
   };
   const response = await fetch(`${BASE_URL}/api/users/login`, loginOptions);
   const result = await response.json();
+  console.log(result);
   return result;
 }
 
@@ -75,6 +76,7 @@ export async function getAllActivities() {
   };
   const response = await fetch(`${BASE_URL}/api/activities`, options);
   const result = await response.json();
+  console.log(result);
   return result;
 }
 
@@ -92,6 +94,7 @@ export async function createActivity(name, description) {
   };
   const response = await fetch(`${BASE_URL}/api/activities`, options);
   const result = await response.json();
+ 
   console.log(result);
   return result;
 }
@@ -188,7 +191,7 @@ export async function editRoutine(name, goal, isPublic) {
   return result;
 }
 
-export async function deleteRoutine() {
+export async function deleteRoutine(routineId) {
   const options = {
     method: "DELETE",
     headers: {
@@ -197,7 +200,7 @@ export async function deleteRoutine() {
     },
   };
 
-  const response = await fetch(`${BASE_URL}/api/routines/:routineId`, options);
+  const response = await fetch(`${BASE_URL}/api/routines/${routineId}`, options);
   const result = await response.json();
   console.log(result);
   return result;

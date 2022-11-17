@@ -9,14 +9,7 @@ const [description, setDescription] = useState("")
 const username = props.loggedInUser.username
 const [reducerValue, forceUpdate] = useReducer(x => x + 1, 0);  
 
-    useEffect(() => {
-        async function fetchActivities() {
-          const allActivities = await getAllActivities();
-          setActivities(allActivities);
-        }
-        fetchActivities();
-      }, [reducerValue]);
-
+    
        
       const handleSubmit = async (e) => {
         e.preventDefault();

@@ -70,3 +70,15 @@ max-width: 400px;
   min-height: 50%;
   min-width: 50%;
 }
+.logo {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 0;
+  margin-left: 20px;
+  animation: 1s slide-right forwards;
+}
+.logo h2 {
+  text-decoration: none;
+  color: white;
+}

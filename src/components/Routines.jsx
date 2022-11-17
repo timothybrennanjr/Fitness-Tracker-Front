@@ -29,6 +29,7 @@ const [routines, setRoutines] = useState([])
                         <br></br>
                         Creator: {routine.creatorName}
                       </div>
+
                       <h4>Routine activities</h4>
                       <div>
                         {routine.activities && routine.activities.length ? (

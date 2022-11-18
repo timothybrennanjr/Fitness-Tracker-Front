@@ -115,7 +115,7 @@ const MyRoutines = (props) => {
                               <br></br>
                               count : {activity.count}
                               <Link to={`/routine_activities/${activity.routineActivityId
-}`}><button>Routine Details</button></Link>
+}`}><button>Routine Activity Details</button></Link>
                             
                             </div>
                           </div>

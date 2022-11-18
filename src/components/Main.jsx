@@ -8,6 +8,7 @@ import {
   Activities,
   MyRoutines,
   RoutineDetail,
+  RoutineActivity
 } from "./";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { getAllPrivateRoutines, getAllRoutines, getMe } from "../api-adapter";
@@ -106,6 +107,9 @@ const Main = () => {
               />
             }
           />
+          <Route
+          path="/routine_activities/:routineActivityId"
+          element={<RoutineActivity/>}/>
         </Routes>
         <div id="container">
           {/* <Activities />

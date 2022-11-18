@@ -176,16 +176,20 @@ export async function createRoutine(name, goal, isPublic) {
   return result;
 }
 
-export async function editRoutine(name, goal, isPublic) {
+export async function editRoutine(routineId, name, goal, isPublic) {
   const options = {
     method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${localStorage.getItem('token')}`
+    },
     body: JSON.stringify({
       name,
       goal,
       isPublic,
     }),
   };
-  const response = await fetch(`${BASE_URL}/api/routines/:routineId`, options);
+  const response = await fetch(`${BASE_URL}/api/routines/${routineId}`, options);
   const result = await response.json();
   console.log(result);
   return result;
@@ -196,7 +200,7 @@ export async function deleteRoutine(routineId) {
     method: "DELETE",
     headers: {
       "Content-type": "application/json",
-      Authorization: `Bearer ${localStorage.getItem("token")} `,
+      "Authorization": `Bearer ${localStorage.getItem("token")} `,
     },
   };
 
@@ -207,45 +211,51 @@ export async function deleteRoutine(routineId) {
 }
 
 
-export async function attachActivityToRoutine(activityId, count, duration) {
+export async function attachActivityToRoutine(activityId, count, duration, routineId) {
     const options = {
       method: "POST",
+      headers: {
+        "Content-type": "application/json"},
       body: JSON.stringify({
         activityId,
         count,
         duration,
       }),
     };
-    const response = await fetch(`${BASE_URL}/api/routines/:routineId/activities`, options);
+    console.log(activityId, count, duration, "checking")
+    const response = await fetch(`${BASE_URL}/api/routines/${routineId}/activities`, options);
     const result = await response.json();
     console.log(result);
     return result;
   }
 
-  export async function editRoutineActivity(count, duration) {
+  export async function editRoutineActivity(count, duration, routineActivityId) {
     const options = {
       method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem("token")} `},
       body: JSON.stringify({
         count,
         duration
       }),
     };
-    const response = await fetch(`${BASE_URL}/api/routine_activities/:routineActivityId`, options);
+    const response = await fetch(`${BASE_URL}/api/routine_activities/${routineActivityId}`, options);
     const result = await response.json();
     console.log(result);
     return result;
   }
 
-  export async function deleteRoutineActivity() {
+  export async function deleteRoutineActivity(routineActivityId) {
     const options = {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")} `,
+        "Authorization": `Bearer ${localStorage.getItem("token")} `
       },
     };
   
-    const response = await fetch(`${BASE_URL}/api/routine_activities/:routineActivityId`, options);
+    const response = await fetch(`${BASE_URL}/api/routine_activities/${routineActivityId}`, options);
     const result = await response.json();
     console.log(result);
     return result;

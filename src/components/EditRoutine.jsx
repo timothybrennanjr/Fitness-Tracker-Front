@@ -13,7 +13,8 @@ const [isPublic, setIsPublic] = useState(false);
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-  const editedRoutine = await editRoutine(name, goal, isPublic);
+  const editedRoutine = await editRoutine(routineId, name, goal, isPublic);
+  console.log(editedRoutine)
 };
 
 const handleChange = (e) => {

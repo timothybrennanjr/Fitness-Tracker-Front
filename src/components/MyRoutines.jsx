@@ -8,6 +8,7 @@ import {
 
 import {Link} from "react-router-dom"
 import SingleRoutine from "./SingleRoutine";
+import RoutineActivity from "./RoutineActivity";
 
 
 const MyRoutines = (props) => {
@@ -18,6 +19,7 @@ const MyRoutines = (props) => {
   const [reducerValue, forceUpdate] = useReducer((x) => x + 1, 0);
   const username = props.loggedInUser.username;
  
+  console.log(userRoutines)
 
   useEffect(() => {
     async function fetchRoutines() {
@@ -112,6 +114,9 @@ const MyRoutines = (props) => {
                               duration: {activity.duration}
                               <br></br>
                               count : {activity.count}
+                              <Link to={`/routine_activities/${activity.routineActivityId
+}`}><button>Routine Details</button></Link>
+                            
                             </div>
                           </div>
                         );

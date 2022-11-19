@@ -50,7 +50,7 @@ const MyRoutines = (props) => {
 
 
   return (
-    <div>
+    <div id="myRoutinesPage">
       <div id="myRoutinesTopPart">
       <div id="myRoutinesH2">
         <h2> Hello {username}! Add a New Routine:</h2>

@@ -30,16 +30,17 @@ async function handleDelete(e) {
 
 
   return (
-    <div>
+    <div id='singleEditRoutineActivity'>
+<div id='editRoutineActivity'>
     <form onSubmit={handleSubmit}>
-            <label className="labels"> Change Count </label>
+            <label className="labels"> Change Count:  </label>
             <input
               type="number"
               required
               value={count}
               onChange={(e) => setCount(e.target.value)}
             />
-            <label className="labels"> Change Goal</label>
+            <label className="labels"> Change Goal: </label>
             <input
               type="number"
               required
@@ -52,6 +53,8 @@ async function handleDelete(e) {
           <button onClick={handleDelete}>Delete Routine</button>
     
         </div>
+    </div>
+    
   )
 }
 

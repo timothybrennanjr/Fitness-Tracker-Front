@@ -51,7 +51,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   padding-top: 50px;
-
+background-color: beige;
 }
 .routinesBox h2 {
   display: flex;
@@ -105,6 +105,73 @@ h3 {
     rgb(189, 130, 127),
     rgb(187, 109, 105)
   );
+}
+
+.SingleRoutine {
+    border: 2px solid black;
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    background-image: linear-gradient(
+      rgb(187, 109, 105),
+      rgb(189, 130, 127),
+      rgb(187, 109, 105)
+    );
+    min-width: 300px;
+    padding-top: 20px;
+}
+
+#singleEditRoutineActivity {
+  border: 2px solid black;
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    background-image: linear-gradient(
+      rgb(187, 109, 105),
+      rgb(189, 130, 127),
+      rgb(187, 109, 105)
+    );
+    min-width: 300px;
+    padding-top: 20px;
+}
+
+#myRoutinesPage {
+  background-color: beige;
+}
+
+#singleRoutineDetails {
+  border: 2px solid black;
+  max-width: 700px;
+  align-items: center;
+}
+
+#editRoutineActivity {
+  border: 2px solid black;
+  max-width: 700px;
+  align-items: center;
+}
+
+
+
+#routineDetails {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 20px;
+}
+
+#attachActivityForm {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 10px;
 }
 
 .activitiesContent {

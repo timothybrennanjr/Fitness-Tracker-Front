@@ -52,54 +52,60 @@ const RoutineDetail = (props) => {
 
   const [count, setCount] = useState(0);
   const [duration, setDuration] = useState(0);
-  console.log(selectedActivity)
+  console.log(selectedActivity);
   async function handleAttach(e) {
-    e.preventDefault()
+    e.preventDefault();
     const activityId = Number(selectedActivity.id);
-    const attached = await attachActivityToRoutine( Number(activityId), Number(count), Number(duration), routineId,);
-    console.log(attached)
-   
-      navigate("/myroutines")
-    
-    
-   }
+    const attached = await attachActivityToRoutine(
+      Number(activityId),
+      Number(count),
+      Number(duration),
+      routineId
+    );
+    console.log(attached);
+
+    navigate("/myroutines");
+  }
 
   return (
     <div className="SingleRoutine">
       {singleFilteredRoutine && singleFilteredRoutine.length ? (
         <>
-          <div>RoutineDetail</div>
+        <div id="singleRoutineDetails">
+        <div>RoutineDetail</div>
           <div> Name: {singleFilteredRoutine[0].name}</div>
           <div>{singleFilteredRoutine[0].goal}</div>
           <button onClick={handleBack}>Go Back</button>
+          <div id="attachActivityForm">
+            <select onChange={handleSelectChange}>
+              {activities.map((activity) => (
+                <option key={activity.id} value={activity.id}>
+                  {activity.name}
+                </option>
+              ))}
+            </select>
+            <form onSubmit={handleAttach}>
+              <label className="labels">Count </label>
+              <input
+                type="number"
+                required
+                value={count}
+                onChange={(e) => setCount(e.target.value)}
+              />
+              <label className="labels">Duration</label>
+              <input
+                type="number"
+                required
+                value={duration}
+                onChange={(e) => setDuration(e.target.value)}
+              ></input>
 
-          <select onChange={handleSelectChange}>
-            {activities.map((activity) => (
-              <option key={activity.id} value={activity.id}>
-                {activity.name}
-              </option>
-            ))}
-          </select>
-          <form onSubmit={handleAttach}>
-            <label className="labels">Count </label>
-            <input
-              type="number"
-              required
-              value={count}
-              onChange={(e) => setCount(e.target.value)}
-            />
-            <label className="labels">Duration</label>
-            <input
-              type="number"
-              required
-              value={duration}
-              onChange={(e) => setDuration(e.target.value)}
-            ></input>
+              <button type="submit">Attach Activity To Routine</button>
+            </form>
+          </div>
+        </div>
+          
 
-            <button type="submit">Attach Activity To Routine</button>
-          </form>
-
-   
           <button onClick={handleDelete}>Delete Routine</button>
           {editActive ? (
             <EditRoutine

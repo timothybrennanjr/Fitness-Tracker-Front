@@ -50,7 +50,15 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  background-color: beige;
+}
+.routinesBox h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.createRoutineForm{
+  display: flex;
+  justify-content: center;
 }
 #workoutsBox {
   display: flex;
@@ -98,10 +106,16 @@ body {
   margin: 0;
   margin-left: 20px;
   animation: 1s slide-right forwards;
-}
-.logo h2 {
   text-decoration: none;
+}
+
+#navbar a {
+  text-decoration: none;
+}
+
+#navbar .logo h2 {
   color: white;
+  text-decoration: none;
 }
 #activityButton {
   background-color: yellow;
@@ -117,4 +131,15 @@ body {
 }
 #logoutButton {
   background-color: yellow;
+}
+
+
+#myRoutinesH2{
+  display: flex;
+  justify-content: center;
+}
+
+.submitPost {
+  background-color: beige;
+  min-height: 100%;
 }

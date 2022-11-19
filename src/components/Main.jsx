@@ -17,6 +17,7 @@ const Main = () => {
   const [loggedInUser, setLoggedInUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
   const [routines, setRoutines] = useState([]);
+  const [makingRoutine, setMakingRoutine] = useState(false)
   const [userRoutines, setUserRoutines] = useState([]);
 
   const getMeData = async () => {
@@ -71,7 +72,7 @@ const Main = () => {
     <Router>
       <div id="main">
         <div id="navbar">
-          <NavBar setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
+          <NavBar setLoggedIn={setLoggedIn} loggedIn={loggedIn} setMakingRoutine={setMakingRoutine}/>
         </div>
         <Routes>
           <Route path="/" element={<Routines />} />
@@ -111,10 +112,6 @@ const Main = () => {
           path="/routine_activities/:routineActivityId"
           element={<RoutineActivity/>}/>
         </Routes>
-        <div id="container">
-          {/* <Activities />
-          <Routines />  */}
-        </div>
       </div>
     </Router>
   );

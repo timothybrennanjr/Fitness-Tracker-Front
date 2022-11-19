@@ -4,7 +4,8 @@ import { loginUser, registerUser } from "../api-adapter";
 
 const NavBar = (props) => {
   const setLoggedIn = props.setLoggedIn;
-  const loggedIn = props.loggedIn
+  const loggedIn = props.loggedIn;
+
 
   async function logout() {
     localStorage.removeItem("token");
@@ -62,6 +63,7 @@ const NavBar = (props) => {
       event.target[1].value = "";
     }
   }
+
 
   return (
     <div id="navbar">

@@ -32,7 +32,6 @@ const MyRoutines = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const createdRoutine = await createRoutine(name, goal, isPublic);
-    setMakingRoutine(false)
     forceUpdate();
     if (createdRoutine.error.includes("duplicate key")) {
       return alert("A routine with that name already exists.");
@@ -52,11 +51,12 @@ const MyRoutines = (props) => {
 
   return (
     <div>
+      <div id="myRoutinesTopPart">
       <div id="myRoutinesH2">
         <h2> Hello {username}! Add a New Routine:</h2>
       </div>
-      <div className="createRoutineForm">
-        <form onSubmit={handleSubmit}>
+      <div className="createRoutineDiv">
+        <form onSubmit={handleSubmit} id="createRoutineForm">
           <label className="labels">Routine Name </label>
           <input
             type="text"
@@ -83,9 +83,10 @@ const MyRoutines = (props) => {
           <button>Create Routine</button>
         </form>
       </div>
-
+      </div>
+    
       <div className="routinesBox">
-        <h3 className="routineTitle"> List of Routines </h3>
+        <h2 className="routineTitle"> List of Routines: </h2>
 
         {userRoutines && userRoutines.length ? (
           userRoutines.map((routine) => {
@@ -98,13 +99,12 @@ const MyRoutines = (props) => {
                     filterRoutines={props.filterRoutines}
                   />
                 </div>
-                <h4>Routine activities</h4>
-
+                <h3>Activities for: {routine.name}</h3>
                 <div>
                   {routine.activities && routine.activities.length ? (
                     routine.activities.map((activity) => {
                       return (
-                        <div key={`activity${activity.id}`}>
+                        <div key={`activity${activity.id}`} className="routineWithActivities">
                           <div className="activityContent">
                             <h5>Routine Activity Name: {activity.name}</h5>
                             <br></br>
@@ -119,11 +119,15 @@ const MyRoutines = (props) => {
                               <button>Routine Activity Details</button>
                             </Link>
                           </div>
+                          <hr width="100%"></hr>
+
                         </div>
+                        
                       );
                     })
                   ) : (
-                    <h2>No activities for this routine</h2>
+                    
+                    <h3>No activities for {routine.name}</h3>
                   )}
                 </div>
               </div>

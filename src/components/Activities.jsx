@@ -76,7 +76,8 @@ const Activities = (props) => {
       </>
     ) : null }
 
-      <>
+      <div className="submitPost"
+      >
       <h2>Hello</h2>
       <h3 className="activitiesTitle"> List of Activities </h3>
       {activities ? (
@@ -95,7 +96,7 @@ const Activities = (props) => {
         <h2>No activities Currently</h2>
         </>
       )}
-        </>
+        </div>
     
 </div>
   );

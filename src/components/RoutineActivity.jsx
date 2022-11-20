@@ -5,7 +5,7 @@ import { editRoutineActivity, deleteRoutineActivity} from '../api-adapter'
 const RoutineActivity = () => {
 
 const params = useParams()
-console.log(params)
+
 const {routineActivityId} = params
 const [count, setCount] = useState(0)
 const [duration, setDuration] = useState(0)
@@ -14,9 +14,12 @@ const navigate = useNavigate()
 
 async function handleSubmit(e) {
     e.preventDefault()
-    console.log(routineActivityId)
+ 
 const edited = await editRoutineActivity(Number(count), Number(duration), routineActivityId)
+if (edited){
+    navigate("/myroutines")
 
+}
 }
 
 async function handleDelete(e) {
@@ -27,7 +30,10 @@ async function handleDelete(e) {
       navigate("/myroutines");
     }
   }
-
+  function handleBack(e) {
+    e.preventDefault();
+    navigate("/myroutines");
+  }
 
   return (
     <div id='singleEditRoutineActivity'>
@@ -50,7 +56,8 @@ async function handleDelete(e) {
             
             <button type="submit" >Edit Routine Activity</button>
           </form>
-          <button onClick={handleDelete}>Delete Routine</button>
+          <button onClick={handleDelete}>Delete Routine Activity</button>
+          <button onClick={handleBack}>Go Back</button>
     
         </div>
     </div>

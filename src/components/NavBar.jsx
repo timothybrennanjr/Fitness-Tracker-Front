@@ -115,13 +115,13 @@ const NavBar = (props) => {
                   required
                 />
                 <button type="submit" id="loginButton">
-                  login Here
+                  Login Here
                 </button>
               </form>
             </h1>
           </div>
           <NavLink to="/activities">
-            <button id="activityButton">activities</button>
+            <button id="activityButton">Activities</button>
           </NavLink>
           <NavLink to="/routines">
             <button id="routineButton">Routines</button>
@@ -131,7 +131,7 @@ const NavBar = (props) => {
         <>
           <div id="navLinkButtons">
             <NavLink to="/activities">
-              <button id="activityButton">activities</button>
+              <button id="activityButton">Activities</button>
             </NavLink>
             <NavLink to="/myroutines">
               <button id="myRoutineButton">My Routines</button>
@@ -143,7 +143,7 @@ const NavBar = (props) => {
               <button id="homeButton">Home</button>
             </NavLink>
             <button id="logoutButton" onClick={logout}>
-              logout
+              Logout
             </button>
           </div>
         </>

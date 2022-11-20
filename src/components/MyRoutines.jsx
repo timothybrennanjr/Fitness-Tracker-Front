@@ -116,7 +116,7 @@ const MyRoutines = (props) => {
                             <Link
                               to={`/routine_activities/${activity.routineActivityId}`}
                             >
-                              <button>Routine Activity Details</button>
+                              <button>Edit Routine Activity</button>
                             </Link>
                           </div>
                           <hr width="100%"></hr>

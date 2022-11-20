@@ -106,6 +106,28 @@ h3 {
     rgb(187, 109, 105)
   );
 }
+.submitPost{
+  border: 2px solid black;
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(
+    (yellow, rgb(187, 109, 105))
+  );
+}
+.activitiesContent {
+  border: 2px solid black;
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(
+    rgb(187, 109, 105),
+    rgb(189, 130, 127),
+    rgb(187, 109, 105)
+  );
+}
 
 .SingleRoutine {
     border: 2px solid black;

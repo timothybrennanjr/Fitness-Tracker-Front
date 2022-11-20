@@ -14,7 +14,7 @@ const SingleRoutine = (props) => {
         <div>Routine Goal: {routine.goal}</div>
         
    
-   <Link to={`/routines/${routine.id}`}><button>Routine Details</button></Link>
+   <Link to={`/routines/${routine.id}`}><button>Edit/Delete this Routine, or Attach Activity</button></Link>
     </div>
   )
 }

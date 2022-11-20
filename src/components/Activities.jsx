@@ -16,7 +16,7 @@ const Activities = (props) => {
     } 
     fetchActivities();
   }, [reducerValue]);
-  console.log(activities)
+   
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,6 +51,27 @@ const Activities = (props) => {
 
           <button>Create Activity</button>
         </form>{" "}
+        <>
+     
+      <h3 className="activitiesTitle"> List of Activities </h3>
+      {activities ? (
+        activities.map((activity) => {
+          return (
+            <div key={`activity${activity.id}`}>
+            <div className="activitiesContent">
+            <h4> Activity name: {activity.name} </h4>
+            Description: {activity.description}
+            </div>
+            </div>
+            );
+          }) 
+          ) : (
+            <>
+        <h2>No activities Currently</h2>
+        </>
+      )}
+        </>
+
       </div>
       </>
     ) : null }
@@ -75,7 +96,7 @@ const Activities = (props) => {
         </>
       )}
         </>
-    ;
+    
 </div>
   );
 };

@@ -52,7 +52,8 @@ const RoutineDetail = (props) => {
 
   const [count, setCount] = useState(0);
   const [duration, setDuration] = useState(0);
-  console.log(selectedActivity);
+  
+
   async function handleAttach(e) {
     e.preventDefault();
     const activityId = Number(selectedActivity.id);
